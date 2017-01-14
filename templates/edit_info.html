@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}baemin{% endblock %}
+{% block body %}
+{% include "navbar.html" %}
+<div class="container">
+  정보를 수정해주세요
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <form action="" method="post">
+        {% csrf_token %}
+        <!-- {{ form.as_p }} -->
+
+        <h5>업체 이름:</h5>
+        <div class="form-group">
+          <input type="TextInput" name="name" class="form-control" value="{{ info.name }}">
+        </div>
+        <h5>연락처:</h5>
+        <div class="form-group">
+          <input type="TextInput" name="contact" class="form-control" value="{{ info.contact }}">
+        </div>
+        <h5>주소:</h5>
+        <div class="form-group">
+          <input type="TextInput" name="address" class="form-control" value="{{ info.address }}">
+        </div>
+        <h5>업체 소개:</h5>
+        <div class="form-group">
+          <textarea name="description" class="form-control">{{ info.description }}</textarea>
+        </div>
+
+        <button class="btn btn-default">저장하기</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

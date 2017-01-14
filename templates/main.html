@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block body %}
+  {% include "navbar.html" %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+          {% for partner in partner_list %}
+            <div class="col-sm-4">
+              <h4>{{ partner.name }}</h4>
+              <div>{{ partner.address }}</div>
+            </div>
+          {% endfor %}
+          <!--  -->
+            <!-- <div class="col-sm-4">
+              <h4>핵귀맛</h4>
+              <div>서울시 양천구</div>
+            </div>
+
+            <div class="col-sm-4">
+              <h4>크크큭</h4>
+              <div>서울시 성북구</div>
+            </div>
+
+            <div class="col-sm-4">
+              <h4>Egg&Things</h4>
+              <div>서울시 성북구</div>
+            </div> -->
+          <!--  -->
+        </div>
+      </div>
+
+      <div class="col-sm-1 col-sm-offset-1">
+        <h4>음식 종류</h4>
+        <ol class="list-unstyled">
+          <li><a href="/">전체</a></li>
+          {% for alias, category in category_list %}
+            <li><a href="/?category={{ alias }}">{{ category }}</a></li>
+          {% endfor %}
+        </ol>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
